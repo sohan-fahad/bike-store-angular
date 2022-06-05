@@ -1,0 +1,21 @@
+<div>
+    <div class="container mx-auto h-screen flex justify-center items-center">
+        <div class="py-5 space-y-3  shadow-md px-5 rounded-md">
+            <h3 class="text-2xl text-red-600 text-center font-semibold">Registration</h3>
+            <form #formData="ngForm" class="space-y-3" (ngSubmit)="handleRegister(formData.value)">
+                <input type="text" ngModel name="displayName" placeholder="Enter your name"
+                    class="border-2 px-4 py-2 w-96 border-gray-700 block">
+
+                <input type="email" ngModel name="email" placeholder="Enter your email"
+                    class="border-2 px-4 py-2 w-96 border-gray-700 block">
+
+                <input type="password" ngModel name="password" placeholder="Enter your password"
+                    class="border-2 px-4 py-2 w-96 border-gray-700 block">
+
+                <button type="submit" class="w-96 bg-red-600 text-white font-semibold py-3 rounded-sm">SING UP</button>
+            </form>
+
+            <a href="auth/login" class="mt-4 text-red-600">Already have an account?</a>
+        </div>
+    </div>
+</div>

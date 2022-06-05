@@ -1,0 +1,38 @@
+<div class="py-10 h-auto">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-2 gap-5">
+            <div>
+                <img src="{{item.productImg}}" alt="">
+                <h1 class="text-4xl font-bold text-red-600 mb-4">{{item.productName}}</h1>
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">Price: {{item.price}}</h3>
+                <p>{{item.description}}</p>
+            </div>
+            <div class="flex flex-col h-full justify-center px-5">
+                <h3 class="font-bold text-2xl text-red-600 text-center mb-3">PLACE YOUR ORDER</h3>
+                <form class="space-y-3">
+                    <input #name type="text" class="h-5 p-4 w-full border-2 border-gray-500"
+                        placeholder="Enter your name" [defaultValue]="userInfo.displayName">
+
+                    <input #email type="email" class="h-5 p-4 w-full border-2 border-gray-500"
+                        placeholder="Enter your email" [defaultValue]="userInfo.email">
+
+                    <input #productName type="text" class="h-5 p-4 w-full border-2 border-gray-500"
+                        [value]="item.productName" disabled>
+
+                    <input #number type="number" class="h-5 p-4 w-full border-2 border-gray-500"
+                        placeholder="Enter your phone number" required>
+
+                    <input #address type="text" class="h-5 p-4 w-full border-2 border-gray-500"
+                        placeholder="Enter your address" required>
+
+                    <input #price type="number" class="h-5 p-4 w-full border-2 border-gray-500"
+                        placeholder="Enter your address" value="{{item.price}}" disabled>
+
+                    <button class="w-full p-3 bg-red-600 text-white font-semibold rounded-sm"
+                        (click)="handlePlaceOrder(name.value, email.value, productName.value, number.value, address.value, price.value)">PLACE
+                        ORDER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

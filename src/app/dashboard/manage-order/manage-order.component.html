@@ -1,0 +1,30 @@
+<div>
+
+    <div class="container mx-auto py-6">
+        <div class="mb-5 space-x-4" [ngSwitch]="sortAction">
+            <button class="bg-red-600  px-3 py-2 text-white rounded-sm" (click)="handleSort('APPROVED')"
+                *ngSwitchCase="'PENDING'">APPROVED
+                ORDERS</button>
+
+            <button class="bg-red-600  px-3 py-2 text-white rounded-sm" (click)="handleSort('PENDING')"
+                *ngSwitchCase="'APPROVED'">PENDING
+                ORDERS</button>
+
+            <button class="bg-green-600 px-3 py-2 text-white rounded-sm" (click)="handleSort('SHIPPED')"
+                *ngSwitchCase="'APPROVED'">SHIPPED
+                ORDERS</button>
+
+            <button class="bg-green-600 px-3 py-2 text-white rounded-sm" (click)="handleSort('SHIPPED')"
+                *ngSwitchCase="'PENDING'">SHIPPED
+                ORDERS</button>
+
+            <button class="bg-red-600 px-3 py-2 text-white rounded-sm" (click)="handleSort('PENDING')"
+                *ngSwitchCase="'SHIPPED'">BACK</button>
+        </div>
+        <div [ngSwitch]="sortAction">
+            <app-pending *ngSwitchCase="'PENDING'"></app-pending>
+            <app-approved *ngSwitchCase="'APPROVED'"></app-approved>
+            <app-shipped *ngSwitchCase="'SHIPPED'"></app-shipped>
+        </div>
+    </div>
+</div>

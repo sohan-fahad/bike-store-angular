@@ -1,0 +1,17 @@
+<div class="bg-gray-800 text-white w-full h-16 sticky top-0 left-0">
+    <div class="container h-full w-full mx-auto flex justify-between items-center">
+        <h3>BIKE STORE</h3>
+        <div class="space-x-5 text-xs float-right">
+            <a routerLink="/">HOME</a>
+            <a href="#">PRODUCTS</a>
+            <a href="#">REVIEWS</a>
+            <a routerLink="explore">EXPLORE</a>
+            <a href="#">CONTACT</a>
+            <a *ngIf="!isLogged" routerLink="auth/login">LOGIN</a>
+
+            <a *ngIf="isLogged" routerLink="dashboard">DASHBOARD</a>
+            <button *ngIf="isLogged" (click)="handleLogout()">LOGOUT</button>
+            <span *ngIf="isLogged">{{userInfo.displayName}}</span>
+        </div>
+    </div>
+</div>
